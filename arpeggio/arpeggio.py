@@ -851,7 +851,7 @@ Dependencies:
                     if atom_id in atom_ids:
                         atom.atom_types.add(atom_type)
 
-    with open(pdb_filename.replace('.pdb', '.atomtypes'), 'wb') as fo:
+    with open(pdb_filename.replace('.pdb', '.atomtypes'), 'w') as fo:
         for atom in s_atoms:
             fo.write('{}\n'.format('\t'.join([str(x) for x in [make_pymol_string(atom), sorted(tuple(atom.atom_types))]])))
 
